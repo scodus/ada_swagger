@@ -1,0 +1,296 @@
+openapi: 3.0.0
+info:
+  title: ADA
+  description: ADA
+  version: '1.0'
+  x-logo:
+    url: https://github.com/joolfe/logoBanner.png
+    backgroundColor: '#FFFFFF'
+    altText: logo
+  termsOfService: '#'
+  contact:
+    name: Scodus
+    url: https://scodus.com
+    email: scodusnp@gmail.com
+  license:
+    name: MIT
+    url: https://es.wikipedia.org/wiki/Licencia_MIT
+servers:
+  - url: http://{{url}}
+  - url: https://ada-checker.onrender.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: user domain
+  - name: company
+  - name: domain page
+  - name: page report
+paths:
+  /api/v1/user-domain:
+    get:
+      tags:
+        - user domain
+      summary: show
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - user domain
+      summary: update or create
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                protocol:
+                  type: string
+                  example: https
+                domain:
+                  type: string
+                  example: scodus.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/company:
+    get:
+      tags:
+        - company
+      summary: show
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - company
+      summary: update or create
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: https
+                logo:
+                  type: string
+                  format: binary
+                address:
+                  type: string
+                phone_number:
+                  type: string
+                city:
+                  type: string
+                country:
+                  type: string
+                contact_person_name:
+                  type: string
+                contact_person_designation:
+                  type: string
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/domain-page:
+    get:
+      tags:
+        - domain page
+      summary: list
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - domain page
+      summary: create
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user_domain_id:
+                  type: string
+                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
+                path:
+                  type: string
+                  example: services
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/domain-page/{domain_page_id}:
+    get:
+      tags:
+        - domain page
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain_page_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 98a75754-0528-4688-a64a-83d061d4300c
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - domain page
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user_domain_id:
+                  type: string
+                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
+                path:
+                  type: string
+                  example: asdfasdf
+                _method:
+                  type: string
+                  example: PATCH
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain_page_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 98a75754-0528-4688-a64a-83d061d4300c
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - domain page
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain_page_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 98a75754-0528-4688-a64a-83d061d4300c
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/page-report:
+    post:
+      tags:
+        - page report
+      summary: page report
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user_domain_id:
+                  type: string
+                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
+                domain_page_id:
+                  type: string
+                  example: 98acee21-f7f1-4cf3-a6b0-8c2b87931596
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/login:
+    post:
+      tags:
+        - default
+      summary: login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: admin@loopmysong.com
+                password:
+                  type: string
+                  example: P@ssw0rd
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/logout:
+    get:
+      tags:
+        - default
+      summary: logout
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/scrap:
+    post:
+      tags:
+        - default
+      summary: test
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                url: https://scodus.com/
+                standards: WCAG2AA
+                includeWarnings: true
+                includeNotices: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
