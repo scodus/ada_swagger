@@ -24,15 +24,17 @@ components:
       type: http
       scheme: bearer
 tags:
-  - name: user domain
-  - name: company
-  - name: domain page
-  - name: page report
+  - name: admin
+  - name: admin > user domain
+  - name: admin > company
+  - name: admin > domain page
+  - name: admin > page report
+  - name: public
 paths:
   /api/v1/user-domain:
     get:
       tags:
-        - user domain
+        - admin > user domain
       summary: show
       security:
         - bearerAuth: []
@@ -43,7 +45,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - user domain
+        - admin > user domain
       summary: update or create
       requestBody:
         content:
@@ -67,7 +69,7 @@ paths:
   /api/v1/company:
     get:
       tags:
-        - company
+        - admin > company
       summary: show
       security:
         - bearerAuth: []
@@ -78,7 +80,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - company
+        - admin > company
       summary: update or create
       requestBody:
         content:
@@ -114,7 +116,7 @@ paths:
   /api/v1/domain-page:
     get:
       tags:
-        - domain page
+        - admin > domain page
       summary: list
       security:
         - bearerAuth: []
@@ -125,7 +127,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - domain page
+        - admin > domain page
       summary: create
       requestBody:
         content:
@@ -149,7 +151,7 @@ paths:
   /api/v1/domain-page/{domain_page_id}:
     get:
       tags:
-        - domain page
+        - admin > domain page
       summary: show
       security:
         - bearerAuth: []
@@ -167,7 +169,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - domain page
+        - admin > domain page
       summary: update
       requestBody:
         content:
@@ -200,7 +202,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - domain page
+        - admin > domain page
       summary: delete
       security:
         - bearerAuth: []
@@ -219,7 +221,7 @@ paths:
   /api/v1/page-report:
     post:
       tags:
-        - page report
+        - admin > page report
       summary: page report
       requestBody:
         content:
@@ -235,6 +237,25 @@ paths:
                   example: 98acee21-f7f1-4cf3-a6b0-8c2b87931596
       security:
         - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/validate-domain:
+    post:
+      tags:
+        - public
+      summary: validate domain
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user_domain_id:
+                  type: string
+                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
       responses:
         '200':
           description: Successful response
@@ -288,7 +309,7 @@ paths:
                 url: https://scodus.com/
                 standards: WCAG2AA
                 includeWarnings: true
-                includeNotices: false
+                includeNotices: true
       responses:
         '200':
           description: Successful response

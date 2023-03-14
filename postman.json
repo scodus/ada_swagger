@@ -7,445 +7,489 @@
 	},
 	"item": [
 		{
-			"name": "user domain",
+			"name": "admin",
 			"item": [
 				{
-					"name": "show",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
+					"name": "user domain",
+					"item": [
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user-domain",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user-domain"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/user-domain",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"user-domain"
-							]
+						{
+							"name": "update or create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "protocol",
+											"value": "https",
+											"type": "text"
+										},
+										{
+											"key": "domain",
+											"value": "scodus.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user-domain",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user-domain"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "update or create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "protocol",
-									"value": "https",
-									"type": "text"
+					"name": "company",
+					"item": [
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "domain",
-									"value": "scodus.com",
-									"type": "text"
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/company",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{url}}/api/v1/user-domain",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"user-domain"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "company",
-			"item": [
-				{
-					"name": "show",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
+						{
+							"name": "update or create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "https",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/home/user--49/Pictures/Screenshot from 2023-02-10 13-52-50.png"
+										},
+										{
+											"key": "address",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "contact_person_name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "contact_person_designation",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/company",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"company"
+									]
 								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/company",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"company"
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "update or create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
+					"name": "domain page",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/domain-page",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"domain-page"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "title",
-									"value": "https",
-									"type": "text"
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "logo",
-									"type": "file",
-									"src": "/home/user--49/Pictures/Screenshot from 2023-02-10 13-52-50.png"
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
 								},
-								{
-									"key": "address",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "phone_number",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "city",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "country",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "contact_person_name",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "contact_person_designation",
-									"value": "",
-									"type": "text"
+								"url": {
+									"raw": "{{url}}/api/v1/domain-page/:domain_page_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"domain-page",
+										":domain_page_id"
+									],
+									"variable": [
+										{
+											"key": "domain_page_id",
+											"value": "98a75754-0528-4688-a64a-83d061d4300c"
+										}
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{url}}/api/v1/company",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"company"
-							]
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_domain_id",
+											"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
+											"type": "text"
+										},
+										{
+											"key": "path",
+											"value": "services",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/domain-page",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"domain-page"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_domain_id",
+											"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
+											"type": "text"
+										},
+										{
+											"key": "path",
+											"value": "asdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PATCH",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/domain-page/:domain_page_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"domain-page",
+										":domain_page_id"
+									],
+									"variable": [
+										{
+											"key": "domain_page_id",
+											"value": "98a75754-0528-4688-a64a-83d061d4300c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/domain-page/:domain_page_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"domain-page",
+										":domain_page_id"
+									],
+									"variable": [
+										{
+											"key": "domain_page_id",
+											"value": "98a75754-0528-4688-a64a-83d061d4300c"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "domain page",
-			"item": [
-				{
-					"name": "list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/domain-page",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"domain-page"
-							]
-						}
-					},
-					"response": []
+					]
 				},
-				{
-					"name": "show",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/domain-page/:domain_page_id",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"domain-page",
-								":domain_page_id"
-							],
-							"variable": [
-								{
-									"key": "domain_page_id",
-									"value": "98a75754-0528-4688-a64a-83d061d4300c"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_domain_id",
-									"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
-									"type": "text"
-								},
-								{
-									"key": "path",
-									"value": "services",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/domain-page",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"domain-page"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_domain_id",
-									"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
-									"type": "text"
-								},
-								{
-									"key": "path",
-									"value": "asdfasdf",
-									"type": "text"
-								},
-								{
-									"key": "_method",
-									"value": "PATCH",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/domain-page/:domain_page_id",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"domain-page",
-								":domain_page_id"
-							],
-							"variable": [
-								{
-									"key": "domain_page_id",
-									"value": "98a75754-0528-4688-a64a-83d061d4300c"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{url}}/api/v1/domain-page/:domain_page_id",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"domain-page",
-								":domain_page_id"
-							],
-							"variable": [
-								{
-									"key": "domain_page_id",
-									"value": "98a75754-0528-4688-a64a-83d061d4300c"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "page report",
-			"item": [
 				{
 					"name": "page report",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
+					"item": [
+						{
+							"name": "page report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_domain_id",
+											"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
+											"type": "text"
+										},
+										{
+											"key": "domain_page_id",
+											"value": "98acee21-f7f1-4cf3-a6b0-8c2b87931596",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/page-report",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"page-report"
+									]
 								}
-							]
-						},
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "validate domain",
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -455,23 +499,18 @@
 									"key": "user_domain_id",
 									"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
 									"type": "text"
-								},
-								{
-									"key": "domain_page_id",
-									"value": "98acee21-f7f1-4cf3-a6b0-8c2b87931596",
-									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{url}}/api/v1/page-report",
+							"raw": "{{url}}/api/v1/validate-domain",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"v1",
-								"page-report"
+								"validate-domain"
 							]
 						}
 					},
@@ -591,7 +630,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"url\":\"https://scodus.com/\",\n    \"standards\":\"WCAG2AA\",\n    \"includeWarnings\":true,\n    \"includeNotices\":false\n}",
+					"raw": "{\n    \"url\":\"https://scodus.com/\",\n    \"standards\":\"WCAG2AA\",\n    \"includeWarnings\":true,\n    \"includeNotices\":true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
