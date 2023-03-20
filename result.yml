@@ -66,6 +66,25 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/v1/domain-report/{domain_id}:
+    get:
+      tags:
+        - admin > user domain
+      summary: get domain report
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 98b150ce-1b2a-4f7e-9f75-8aec13224609
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/v1/company:
     get:
       tags:
@@ -137,7 +156,7 @@ paths:
               properties:
                 user_domain_id:
                   type: string
-                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
+                  example: 98b150ce-1b2a-4f7e-9f75-8aec13224609
                 path:
                   type: string
                   example: services
@@ -161,7 +180,7 @@ paths:
           schema:
             type: string
           required: true
-          example: 98a75754-0528-4688-a64a-83d061d4300c
+          example: 98b150f1-98d9-4377-bead-6a03cf6fb425
       responses:
         '200':
           description: Successful response
@@ -179,7 +198,7 @@ paths:
               properties:
                 user_domain_id:
                   type: string
-                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
+                  example: 98b150ce-1b2a-4f7e-9f75-8aec13224609
                 path:
                   type: string
                   example: asdfasdf
@@ -194,7 +213,7 @@ paths:
           schema:
             type: string
           required: true
-          example: 98a75754-0528-4688-a64a-83d061d4300c
+          example: 98b3063c-e70a-4904-81fa-0244646e11b1
       responses:
         '200':
           description: Successful response
@@ -212,31 +231,7 @@ paths:
           schema:
             type: string
           required: true
-          example: 98a75754-0528-4688-a64a-83d061d4300c
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v1/page-report:
-    post:
-      tags:
-        - admin > page report
-      summary: page report
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                user_domain_id:
-                  type: string
-                  example: 98a756ba-7bed-4494-a772-bcc9de1d5d30
-                domain_page_id:
-                  type: string
-                  example: 98acee21-f7f1-4cf3-a6b0-8c2b87931596
-      security:
-        - bearerAuth: []
+          example: 98b151e3-9a33-4b46-a2f9-13575fa800ed
       responses:
         '200':
           description: Successful response
@@ -274,7 +269,7 @@ paths:
               properties:
                 email:
                   type: string
-                  example: admin@loopmysong.com
+                  example: admin@admin.com
                 password:
                   type: string
                   example: P@ssw0rd

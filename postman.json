@@ -91,6 +91,42 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "get domain report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/domain-report/:domain_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"domain-report",
+										":domain_id"
+									],
+									"variable": [
+										{
+											"key": "domain_id",
+											"value": "98b150ce-1b2a-4f7e-9f75-8aec13224609"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -284,7 +320,7 @@
 									"variable": [
 										{
 											"key": "domain_page_id",
-											"value": "98a75754-0528-4688-a64a-83d061d4300c"
+											"value": "98b150f1-98d9-4377-bead-6a03cf6fb425"
 										}
 									]
 								}
@@ -311,7 +347,7 @@
 									"formdata": [
 										{
 											"key": "user_domain_id",
-											"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
+											"value": "98b150ce-1b2a-4f7e-9f75-8aec13224609",
 											"type": "text"
 										},
 										{
@@ -355,7 +391,7 @@
 									"formdata": [
 										{
 											"key": "user_domain_id",
-											"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
+											"value": "98b150ce-1b2a-4f7e-9f75-8aec13224609",
 											"type": "text"
 										},
 										{
@@ -384,7 +420,7 @@
 									"variable": [
 										{
 											"key": "domain_page_id",
-											"value": "98a75754-0528-4688-a64a-83d061d4300c"
+											"value": "98b3063c-e70a-4904-81fa-0244646e11b1"
 										}
 									]
 								}
@@ -424,7 +460,7 @@
 									"variable": [
 										{
 											"key": "domain_page_id",
-											"value": "98a75754-0528-4688-a64a-83d061d4300c"
+											"value": "98b151e3-9a33-4b46-a2f9-13575fa800ed"
 										}
 									]
 								}
@@ -435,52 +471,7 @@
 				},
 				{
 					"name": "page report",
-					"item": [
-						{
-							"name": "page report",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "user_domain_id",
-											"value": "98a756ba-7bed-4494-a772-bcc9de1d5d30",
-											"type": "text"
-										},
-										{
-											"key": "domain_page_id",
-											"value": "98acee21-f7f1-4cf3-a6b0-8c2b87931596",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/api/v1/page-report",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"page-report"
-									]
-								}
-							},
-							"response": []
-						}
-					]
+					"item": []
 				}
 			]
 		},
@@ -540,7 +531,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "admin@loopmysong.com",
+							"value": "admin@admin.com",
 							"type": "text"
 						},
 						{
